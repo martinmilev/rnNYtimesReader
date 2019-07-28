@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Text, FlatList } from 'react-native'
+import { Text, FlatList, ActivityIndicator } from 'react-native'
 import ArticleRow from './ArticleRow'
 
 const Articles = ({ articles, fetchArticles }) => {
@@ -11,11 +11,7 @@ const Articles = ({ articles, fetchArticles }) => {
   }, [])
 
   if (articles.length == 0) {
-    return (
-      <Text style={{ fontSize: 24, alignSelf: 'center' }}>
-        Loading...
-      </Text>
-    )
+    return <ActivityIndicator size="large" color="#1e272e" />
   }
 
   return (

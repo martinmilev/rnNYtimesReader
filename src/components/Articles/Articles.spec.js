@@ -4,26 +4,15 @@ import Articles from './Articles'
 import ArticleRow from './ArticleRow'
 
 describe('(Articles) is rendering', () => {
-  it('should render articles when articles array is empty', () => {
-    const { getAllByType } = render(
-      <Articles
-        articles={[{ title: 'Most Viewed Article' }]}
-        fetchArticles={() => {}}
-      />
-    )
-    const text = getAllByType('Text')
-    expect(text[0].props.children).toEqual('Most Viewed Article')
-  })
-
-  it('should render Loading message when articles array is empty', () => {
+  it('should render activity indicator when articles array is empty', () => {
     const { getAllByType } = render(
       <Articles
         articles={[]}
         fetchArticles={() => {}}
       />
     )
-    const text = getAllByType('Text')
-    expect(text[0].props.children).toEqual('Loading...')
+    const indicator = getAllByType('ActivityIndicator')
+    expect(indicator.length).toEqual(1)
   })
 
   it('should fetch articles when mounted', () => {
@@ -34,7 +23,6 @@ describe('(Articles) is rendering', () => {
         fetchArticles={fetchArticles}
       />
     )
-    const text = getAllByType('Text')
     expect(fetchArticles).toHaveBeenCalled()
   })
 })
