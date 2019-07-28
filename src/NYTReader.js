@@ -9,17 +9,17 @@ const routes = [
   {
     path: '/',
     exact: true,
-    header: () => <Header title={'New York Times Most Viewed Articles'} />,
+    header: props => <Header title={'New York Times Most Viewed Articles'} {...props} />,
     main: () => <Articles />
   },
   {
     path: '/article/:id',
-    header: () => <Header title={''} />,
+    header: props => <Header title={''} {...props} />,
     main: props => <Article {...props} />
   }
 ]
 
-const NYTReader = ({ history }) => (
+const NYTReader = () => (
   <Fragment>
     <StatusBar backgroundColor="transparent" barStyle="dark-content" />
     {routes.map((route, index) => (
@@ -29,8 +29,8 @@ const NYTReader = ({ history }) => (
         path={route.path}
         render={props => (
           <Fragment>
-            <route.header history={history} />
-            <route.main {...props} history={history} />
+            <route.header history={props.history} />
+            <route.main {...props} />
           </Fragment>
         )}
       />

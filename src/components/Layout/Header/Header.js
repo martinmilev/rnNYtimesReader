@@ -1,11 +1,11 @@
 import React from 'react'
 import { View } from 'react-native'
-import { Row, Typography } from '../'
+import { Row, Typography, BackButton } from '../'
 import PropTypes from 'prop-types'
 
-const Header = ({ title }) => (
-  <Row style={{ padding: 5 }}>
-    <View flex={0.1} />
+const Header = ({ title, history }) => (
+  <Row style={{ padding: 10 }}>
+    <BackButton history={history} />
     <Typography variant={'header'} align={'center'} testID="title">
       {title}
     </Typography>
