@@ -22,3 +22,6 @@ export default (state = [], action) => {
 }
 
 export const articles = state => state.articles
+export const articleById = (state, id) =>
+  state.articles.find(article => article.id == id)
+

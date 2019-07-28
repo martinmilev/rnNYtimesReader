@@ -17,7 +17,7 @@ describe('(Articles) is rendering', () => {
 
   it('should fetch articles when mounted', () => {
     const fetchArticles = jest.fn()
-    const { getAllByType } = render(
+    render(
       <Articles
         articles={[]}
         fetchArticles={fetchArticles}
@@ -33,7 +33,6 @@ describe('(ArticleRow) is rendering', () => {
       <ArticleRow
         item={{
           title: 'Most Viewed Article',
-          abstract: 'Some abstraction',
           published_date: '21.21.2121'
         }}
         fetchArticles={() => {}}
@@ -41,7 +40,6 @@ describe('(ArticleRow) is rendering', () => {
     )
     const text = getAllByType('Text')
     expect(text[0].props.children).toEqual('Most Viewed Article')
-    expect(text[1].props.children).toEqual('Some abstraction')
-    expect(text[2].props.children).toEqual('21.21.2121')
+    expect(text[1].props.children).toEqual('21.21.2121')
   })
 })

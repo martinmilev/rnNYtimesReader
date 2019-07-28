@@ -26,27 +26,39 @@ if (Config.ENV === 'development') {
         results: [{
           title: 'Brexit: plans in place to mitigate impact of no deal',
           abstract: 'If the UK leaves the EU without a deal, the effects will be felt by people and companies across Europe...',
-          published_date: '21-03-2019'
+          published_date: '21-03-2019',
+          byline: 'by John Doe',
+          id: 1
         }, {
           title: 'From the new Commission president to migration: 5 numbers from Strasbourg',
           abstract: 'Parliament elected Ursula von der Leyen as president of the European Commission, with 383 votes out of 733.', 
-          published_date: '11-06-2019'
+          published_date: '11-06-2019',
+          byline: 'by John Doe',
+          id: 2
         }, {
           title: 'Brexit: plans in place to mitigate impact of no deal',
           abstract: 'If the UK leaves the EU without a deal, the effects will be felt by people and companies across Europe...',
-          published_date: '21-03-2019'
+          published_date: '21-03-2019',
+          byline: 'by John Doe',
+          id: 3
         }, {
           title: 'From the new Commission president to migration: 5 numbers from Strasbourg',
           abstract: 'Parliament elected Ursula von der Leyen as president of the European Commission, with 383 votes out of 733.', 
-          published_date: '11-06-2019'
+          published_date: '11-06-2019',
+          byline: 'by John Doe',
+          id: 4
         }, {
           title: 'Brexit: plans in place to mitigate impact of no deal',
           abstract: 'If the UK leaves the EU without a deal, the effects will be felt by people and companies across Europe...',
-          published_date: '21-03-2019'
+          published_date: '21-03-2019',
+          byline: 'by John Doe',
+          id: 5
         }, {
           title: 'From the new Commission president to migration: 5 numbers from Strasbourg',
           abstract: 'Parliament elected Ursula von der Leyen as president of the European Commission, with 383 votes out of 733.', 
-          published_date: '11-06-2019'
+          published_date: '11-06-2019',
+          byline: 'by John Doe',
+          id: 6
         }]
       }]
   })

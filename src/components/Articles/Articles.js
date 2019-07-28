@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { Text, FlatList, ActivityIndicator } from 'react-native'
+import React, { useEffect } from 'react'
+import { FlatList, ActivityIndicator } from 'react-native'
 import ArticleRow from './ArticleRow'
 
 const Articles = ({ articles, fetchArticles }) => {
