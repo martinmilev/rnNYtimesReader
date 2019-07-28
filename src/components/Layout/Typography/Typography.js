@@ -3,9 +3,11 @@ import { Text } from 'react-native'
 import PropTypes from 'prop-types'
 import styles from './styles'
 
-const Typography = ({ variant, color, style, children }) => {
+const Typography = ({ variant, align, style, children }) => {
   const textStyle = {
+    flex: 1,
     color: styles.color,
+    textAlign: align,
     ...styles[variant]
   }
 
@@ -18,10 +20,12 @@ const Typography = ({ variant, color, style, children }) => {
 
 Typography.propTypes = {
   variant: PropTypes.oneOf([
+    'header',
     'title',
     'caption',
     'subheading',
   ]),
+  align: PropTypes.oneOf(['auto', 'left', 'right', 'center', 'justify']),
   children: PropTypes.any,
   style: PropTypes.any
 }

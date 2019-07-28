@@ -2,9 +2,15 @@ import { StyleSheet } from 'react-native'
 
 const color = '#1e272e'
 const styles = StyleSheet.create({
-  title: {
+  header: {
     color,
     fontSize: 16,
+    fontWeight: '600',
+    fontFamily: 'UbuntuCondensed-Regular'
+  },
+  title: {
+    color,
+    fontSize: 14,
     fontWeight: '600',
     fontFamily: 'UbuntuCondensed-Regular'
   },

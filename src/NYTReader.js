@@ -1,13 +1,12 @@
 import React, { Fragment } from 'react'
-import { StatusBar, Text } from 'react-native'
+import { StatusBar } from 'react-native'
 import Articles from './components/Articles'
+import { Header } from './components/Layout'
 
 const NYTReader = () => (
   <Fragment>
     <StatusBar backgroundColor="transparent" barStyle="dark-content" />
-    <Text style={{ fontSize: 24, alignSelf: 'center' }}>
-      RN New York Times Reader
-    </Text>
+    <Header title={'New York Times Most Viewed Articles'} />
     <Articles />
   </Fragment>
 )
