@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
+    "android": "ENVFILE=.env react-native run-android",
+    "android:dev": "ENVFILE=.env.dev react-native run-android",
     "start": "react-native start",
     "test": "jest",
     "watch": "jest --watch"
@@ -22,6 +23,7 @@
     "@babel/core": "^7.5.0",
     "@babel/runtime": "^7.5.0",
     "@react-native-community/eslint-config": "^0.0.3",
+    "axios-mock-adapter": "^1.17.0",
     "babel-jest": "^24.1.0",
     "jest": "^24.1.0",
     "metro-react-native-babel-preset": "^0.54.1",
