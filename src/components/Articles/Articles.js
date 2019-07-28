@@ -1,5 +1,6 @@
-import React, { Fragment,  useState, useEffect } from 'react'
-import { Text, ScrollView } from 'react-native'
+import React, { useState, useEffect } from 'react'
+import { Text, FlatList } from 'react-native'
+import ArticleRow from './ArticleRow'
 
 const Articles = ({ articles, fetchArticles }) => {
   useEffect(() => { 
@@ -16,13 +17,12 @@ const Articles = ({ articles, fetchArticles }) => {
       </Text>
     )
   }
+
   return (
-    <ScrollView>
-      {articles.map((article, index) => (
-          <Text key={index}>{index + 1}: {article.title}</Text>
-        )
-      )}
-    </ScrollView>
+    <FlatList
+      data={articles}
+       renderItem={ArticleRow}
+    />
   )
 }
 

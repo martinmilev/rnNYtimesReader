@@ -1,21 +1,18 @@
 import React from 'react'
 import { render } from 'react-native-testing-library'
 import Articles from './Articles'
+import ArticleRow from './ArticleRow'
 
 describe('(Articles) is rendering', () => {
   it('should render articles when articles array is empty', () => {
     const { getAllByType } = render(
       <Articles
-        articles={[
-          { title: 'Most Viewed Article' },
-          { title: 'Second Most Viewew' }
-        ]}
+        articles={[{ title: 'Most Viewed Article' }]}
         fetchArticles={() => {}}
       />
     )
     const text = getAllByType('Text')
-    expect(text[0].props.children).toEqual([1, ": ", "Most Viewed Article"])
-    expect(text[1].props.children).toEqual([2, ": ", "Second Most Viewew"])
+    expect(text[0].props.children).toEqual('Most Viewed Article')
   })
 
   it('should render Loading message when articles array is empty', () => {
@@ -39,5 +36,24 @@ describe('(Articles) is rendering', () => {
     )
     const text = getAllByType('Text')
     expect(fetchArticles).toHaveBeenCalled()
+  })
+})
+
+describe('(ArticleRow) is rendering', () => {
+  it('should render article', () => {
+    const { getAllByType } = render(
+      <ArticleRow
+        item={{
+          title: 'Most Viewed Article',
+          abstract: 'Some abstraction',
+          published_date: '21.21.2121'
+        }}
+        fetchArticles={() => {}}
+      />
+    )
+    const text = getAllByType('Text')
+    expect(text[0].props.children).toEqual('Most Viewed Article')
+    expect(text[1].props.children).toEqual('Some abstraction')
+    expect(text[2].props.children).toEqual('21.21.2121')
   })
 })
