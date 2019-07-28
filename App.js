@@ -1,43 +1,43 @@
 import React, { Fragment,  useState, useEffect } from 'react'
-import { Text, StatusBar } from 'react-native'
+import { Text, ScrollView, StatusBar } from 'react-native'
+import { connect } from 'react-redux'
 import Config from 'react-native-config'
+import { fetchArticles, articles } from './src/redux/modules/articles'
 
-const App = () => {
-    const [articles, setArticles] = useState(0)
-
+const App = ({ articles, fetchArticles }) => {
   useEffect(() => { 
     let mounted = false
-
     if (!mounted) {
-      fetch(
-        `${Config.API_URL}/mostpopular/v2/viewed/1.json?api-key=${Config.API_KEY}`
-      )
-      .then(response => response.json())
-      .then(json => setArticles(json.results))
-      .catch((error) => console.error(error))
-      mounted = true
+      fetchArticles()
     }
   }, [])
 
+  console.log('r', articles)
 
   return (
-  <Fragment>
-    <StatusBar backgroundColor="transparent" barStyle="dark-content" />
-    <Text style={{ fontSize: 24, alignSelf: 'center' }}>
-      RN New York Times Reader
-    </Text>
-    {articles == 0 ? (
+    <Fragment>
+      <StatusBar backgroundColor="transparent" barStyle="dark-content" />
       <Text style={{ fontSize: 24, alignSelf: 'center' }}>
-        Loading...
+        RN New York Times Reader
       </Text>
-    ) : (
-        {articles.map((article, index) => (
-            <Text key={index}>{index + 1}: {article.title}</Text>
-          )
-        )}
-    )}
-  </Fragment>
-)
+      {articles.length == 0 ? (
+        <Text style={{ fontSize: 24, alignSelf: 'center' }}>
+          Loading...
+        </Text>
+      ) : (
+        <ScrollView>
+          {articles.map((article, index) => (
+              <Text key={index}>{index + 1}: {article.title}</Text>
+            )
+          )}
+        </ScrollView>
+      )}
+    </Fragment>
+  )
 }
 
-export default App
+const mapStateToProps = state => ({ articles: articles(state) })
+
+const mapDispatchToProps = { fetchArticles }
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
