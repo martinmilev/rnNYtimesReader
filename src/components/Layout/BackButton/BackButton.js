@@ -29,16 +29,16 @@ class BackButton extends Component {
 
   render() {
     if (this.props.history.location.pathname == '/') {
-      return null
+      return <View flex={0.1} />
     }
 
     return (
       <TouchableOpacity
-        style={{ pading: 20 }}
+        style={{ width: 80 }}
         onPress={this.handleBackPress}
         testID="button"
       >
-        <Typography variant={'header'}>{"<"}</Typography>
+        <Typography variant={'icon'}>{"<"}</Typography>
       </TouchableOpacity>
     )
   }

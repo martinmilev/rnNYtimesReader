@@ -6,24 +6,22 @@ import PropTypes from 'prop-types'
 
 const ArticleRow = ({ item }) => (
   <Link to={`/article/${item.id}`}>
-    <View style={styles.container}>
-      <Row>
-        <View style={styles.thumbnail}>
-          <Image style={styles.thumbnail} image={item.media.thumbnail} />
-        </View>
-        <Typography variant={'title'}>{item.title}</Typography>
-      </Row>
-      <Row style={styles.footerRow}>
-        <Typography align={'right'} variant={'caption'}>
-          {item.publishedOn}
-        </Typography>
-      </Row>
-    </View>
+    <Row style={styles.container}>
+      <View style={styles.thumbnail}>
+        <Image style={styles.thumbnail} image={item.media.thumbnail} />
+      </View>
+      <Typography variant={'title'}>{item.title}</Typography>
+      <View style={styles.thumbnail}>
+      <Typography align={'right'} variant={'caption'}>
+        {item.publishedOn}
+      </Typography>
+      </View>
+    </Row>
   </Link>
 )
 
 const styles = StyleSheet.create({
-  container: { borderBottomColor: 'grey', borderBottomWidth: 1, padding: 5 },
+  container: { borderBottomColor: 'grey', borderTopWidth: 0.5, padding: 5 },
   thumbnail: { marginRight: 10 },
   footerRow: { justifyContent: 'flex-end' }
 })

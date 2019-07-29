@@ -26,7 +26,6 @@ export default (state = [], action) => {
   }
 }
 
-export const articles = state => state.articles
-export const articleById = (state, id) =>
-  state.articles.find(article => article.id == id)
-
+export const getArticles = state => state.articles
+export const getArticleById = (state, id) =>
+  getArticles(state).find(article => article.id == id)

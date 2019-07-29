@@ -25,6 +25,12 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: '400',
     fontFamily: 'UbuntuCondensed-Regular'
+  },
+  icon: {
+    color,
+    fontSize: 22,
+    fontWeight: '600',
+    fontFamily: 'UbuntuCondensed-Regular'
   }
 })
 

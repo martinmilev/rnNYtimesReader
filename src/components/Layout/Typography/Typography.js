@@ -24,6 +24,7 @@ Typography.propTypes = {
     'title',
     'caption',
     'subheading',
+    'icon'
   ]),
   align: PropTypes.oneOf(['auto', 'left', 'right', 'center', 'justify']),
   children: PropTypes.any,

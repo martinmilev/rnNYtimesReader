@@ -1,10 +1,10 @@
 import { connect } from 'react-redux'
-import { fetchArticles, articles } from '../../redux/modules/articles'
+import { fetchArticles, getArticles } from '../../redux/modules/articles'
 import { setRange } from '../../redux/modules/range'
 import Articles from './Articles'
 
 const mapStateToProps = state => ({
-  articles: articles(state),
+  articles: getArticles(state),
   range: state.range
 })
 
