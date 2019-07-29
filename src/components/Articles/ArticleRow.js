@@ -1,18 +1,21 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
 import { Link } from 'react-router-native'
-import { Row, Typography } from '../Layout'
+import { Row, Typography, Image } from '../Layout'
 import PropTypes from 'prop-types'
 
 const ArticleRow = ({ item }) => (
   <Link to={`/article/${item.id}`}>
     <View style={styles.container}>
       <Row>
+        <View style={styles.thumbnail}>
+          <Image style={styles.thumbnail} image={item.media.thumbnail} />
+        </View>
         <Typography variant={'title'}>{item.title}</Typography>
       </Row>
       <Row style={styles.footerRow}>
         <Typography align={'right'} variant={'caption'}>
-          {item.published_date}
+          {item.publishedOn}
         </Typography>
       </Row>
     </View>
@@ -21,6 +24,7 @@ const ArticleRow = ({ item }) => (
 
 const styles = StyleSheet.create({
   container: { borderBottomColor: 'grey', borderBottomWidth: 1, padding: 5 },
+  thumbnail: { marginRight: 10 },
   footerRow: { justifyContent: 'flex-end' }
 })
 

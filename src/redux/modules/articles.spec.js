@@ -1,7 +1,5 @@
-import
-  reduce,
-  { FETCH_ARTICLES_SUCCESS, articles, articleById }
-from './articles'
+import reduce, { SET_ARTICLES, articles, articleById }
+  from './articles'
 
 describe('(Articles)', () => {
   describe('Reducer', () => {
@@ -10,25 +8,25 @@ describe('(Articles)', () => {
       expect(state.test).toBe(0)
     })
 
-    it('Articles updated on success', () => {
+    it('Articles updated on SET_ARTICLES', () => {
       const state = reduce([], {
-        type: FETCH_ARTICLES_SUCCESS,
-        payload: { data: { results: [1,2,3] } }
+        type: SET_ARTICLES,
+        articles: [1, 2, 3]
       })
-      expect(state).toEqual([1,2,3])
+      expect(state).toEqual([1, 2, 3])
     })
   })
 
   describe('Selectors', () => {
     describe('articles', () => {
       it('should get articles', () => {
-        const state = { articles: [1,2,3,4,5] }
-        expect(articles(state)).toEqual([1,2,3,4,5])
+        const state = { articles: [1, 2, 3, 4, 5] }
+        expect(articles(state)).toEqual([1, 2, 3, 4, 5])
       })
 
       describe('articleById', () => {
         it('should get article by id', () => {
-          const state = { articles: [{ id: 1 }, { id: 2 }, { id: 3 }]}
+          const state = { articles: [{ id: 1 }, { id: 2 }, { id: 3 }] }
           expect(articleById(state, 2)).toEqual({ id: 2 })
         })
       })

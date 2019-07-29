@@ -1,5 +1,6 @@
 export const FETCH_ARTICLES = '[articles] Fetch'
 export const FETCH_ARTICLES_SUCCESS = '[articles] Fetch_SUCCESS'
+export const SET_ARTICLES = '[articles] Set'
 
 export const fetchArticles = () => ({
   type: FETCH_ARTICLES,
@@ -11,10 +12,14 @@ export const fetchArticles = () => ({
   }
 })
 
+export const setArticles = articles => {
+  return { type: SET_ARTICLES, articles }
+}
+
 export default (state = [], action) => {
   switch (action.type) {
-    case FETCH_ARTICLES_SUCCESS: {
-      return action.payload.data.results
+    case SET_ARTICLES: {
+      return action.articles
     }
     default:
       return state

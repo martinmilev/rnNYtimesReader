@@ -3,7 +3,7 @@ import { FlatList, ActivityIndicator } from 'react-native'
 import ArticleRow from './ArticleRow'
 
 const Articles = ({ articles, fetchArticles }) => {
-  useEffect(() => { 
+  useEffect(() => {
     let mounted = false
     if (!mounted) {
       fetchArticles()
@@ -17,7 +17,7 @@ const Articles = ({ articles, fetchArticles }) => {
   return (
     <FlatList
       data={articles}
-       renderItem={ArticleRow}
+      renderItem={ArticleRow}
     />
   )
 }

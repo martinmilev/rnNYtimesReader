@@ -8,11 +8,11 @@ const options = {
   returnRejectedPromiseOnError: true,
   interceptors: {
     request: [
-      ({}, request) => {
+      ({ }, request) => {
         request.url = `${request.url}.json?api-key=${Config.API_KEY}`
         return request
       }
-     ]
+    ]
   }
 }
 
@@ -28,37 +28,43 @@ if (Config.ENV === 'development') {
           abstract: 'If the UK leaves the EU without a deal, the effects will be felt by people and companies across Europe...',
           published_date: '21-03-2019',
           byline: 'by John Doe',
-          id: 1
+          id: 1,
+          media: [{ 'media-metadata': [] }]
         }, {
           title: 'From the new Commission president to migration: 5 numbers from Strasbourg',
-          abstract: 'Parliament elected Ursula von der Leyen as president of the European Commission, with 383 votes out of 733.', 
+          abstract: 'Parliament elected Ursula von der Leyen as president of the European Commission, with 383 votes out of 733.',
           published_date: '11-06-2019',
           byline: 'by John Doe',
-          id: 2
+          id: 2,
+          media: [{ 'media-metadata': [] }]
         }, {
           title: 'Brexit: plans in place to mitigate impact of no deal',
           abstract: 'If the UK leaves the EU without a deal, the effects will be felt by people and companies across Europe...',
           published_date: '21-03-2019',
           byline: 'by John Doe',
-          id: 3
+          id: 3,
+          media: [{ 'media-metadata': [] }]
         }, {
           title: 'From the new Commission president to migration: 5 numbers from Strasbourg',
-          abstract: 'Parliament elected Ursula von der Leyen as president of the European Commission, with 383 votes out of 733.', 
+          abstract: 'Parliament elected Ursula von der Leyen as president of the European Commission, with 383 votes out of 733.',
           published_date: '11-06-2019',
           byline: 'by John Doe',
-          id: 4
+          id: 4,
+          media: [{ 'media-metadata': [] }]
         }, {
           title: 'Brexit: plans in place to mitigate impact of no deal',
           abstract: 'If the UK leaves the EU without a deal, the effects will be felt by people and companies across Europe...',
           published_date: '21-03-2019',
           byline: 'by John Doe',
-          id: 5
+          id: 5,
+          media: [{ 'media-metadata': [] }]
         }, {
           title: 'From the new Commission president to migration: 5 numbers from Strasbourg',
-          abstract: 'Parliament elected Ursula von der Leyen as president of the European Commission, with 383 votes out of 733.', 
+          abstract: 'Parliament elected Ursula von der Leyen as president of the European Commission, with 383 votes out of 733.',
           published_date: '11-06-2019',
           byline: 'by John Doe',
-          id: 6
+          id: 6,
+          media: [{ 'media-metadata': [] }]
         }]
       }]
   })
