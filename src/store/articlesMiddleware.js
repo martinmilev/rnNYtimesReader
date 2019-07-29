@@ -1,8 +1,14 @@
-import { FETCH_ARTICLES_SUCCESS, setArticles } from '../redux/modules/articles'
+import { FETCH_ARTICLES_SUCCESS, setArticles, fetchArticles } from '../redux/modules/articles'
+import { SET_RANGE } from '../redux/modules/range'
 
-const processArticlesFetchFlow = ({
-  dispatch
-}) => next => action => {
+const rangeChangeFlow = ({ dispatch }) => next => action => {
+  next(action)
+  if (action.type === SET_RANGE) {
+    dispatch(fetchArticles(action.range))
+  }
+}
+
+const articlesFetchFlow = ({ dispatch }) => next => action => {
   next(action)
   if (action.type === FETCH_ARTICLES_SUCCESS) {
     const articles = action.payload.data.results
@@ -50,4 +56,4 @@ const processArticleMedia = media => {
   return extracted
 }
 
-export const articlesMiddleware = [processArticlesFetchFlow]
+export const articlesMiddleware = [rangeChangeFlow, articlesFetchFlow]

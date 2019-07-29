@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import { FlatList, ActivityIndicator } from 'react-native'
 import ArticleRow from './ArticleRow'
+import RangePicker from './RangePicker'
 
-const Articles = ({ articles, fetchArticles }) => {
+const Articles = ({ articles, range, setRange }) => {
   useEffect(() => {
     let mounted = false
     if (!mounted) {
-      fetchArticles()
+      setRange(range)
     }
   }, [])
 
@@ -15,10 +16,17 @@ const Articles = ({ articles, fetchArticles }) => {
   }
 
   return (
-    <FlatList
+    <Fragment>
+      <RangePicker
+        selectedValue={range}
+        onSelect={setRange}
+      />
+      <FlatList
       data={articles}
       renderItem={ArticleRow}
-    />
+      keyExtractor = {item => `${item.id}`}
+      />
+    </Fragment>
   )
 }
 

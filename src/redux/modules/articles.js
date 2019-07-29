@@ -2,12 +2,12 @@ export const FETCH_ARTICLES = '[articles] Fetch'
 export const FETCH_ARTICLES_SUCCESS = '[articles] Fetch_SUCCESS'
 export const SET_ARTICLES = '[articles] Set'
 
-export const fetchArticles = () => ({
+export const fetchArticles = range => ({
   type: FETCH_ARTICLES,
   payload: {
     request: {
       method: 'get',
-      url: '/mostpopular/v2/viewed/1'
+      url: `/mostpopular/v2/viewed/${range}`
     }
   }
 })

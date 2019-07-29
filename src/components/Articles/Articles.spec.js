@@ -7,23 +7,25 @@ describe('(Articles) is rendering', () => {
   it('should render activity indicator when articles array is empty', () => {
     const { getAllByType } = render(
       <Articles
-        articles={[]}
-        fetchArticles={() => {}}
+      range={1}
+      articles={[]}
+      setRange={() => {}}
       />
     )
     const indicator = getAllByType('ActivityIndicator')
     expect(indicator.length).toEqual(1)
   })
 
-  it('should fetch articles when mounted', () => {
-    const fetchArticles = jest.fn()
+  it('should set date range when mounted', () => {
+    const onEventMock = jest.fn()
     render(
       <Articles
+        range={1}
         articles={[]}
-        fetchArticles={fetchArticles}
+        setRange={onEventMock}
       />
     )
-    expect(fetchArticles).toHaveBeenCalled()
+    expect(onEventMock).toHaveBeenCalledWith(1)
   })
 })
 
