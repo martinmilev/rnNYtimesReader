@@ -19,13 +19,13 @@ cd ./rnNYtimesReader
 yarn istall
 ```
 
-For android
+- For android
 
 ```sh
 yarn android
 ```
 
-For ios
+- For ios
 
 ```sh
 TBD
