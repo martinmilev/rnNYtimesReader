@@ -1,4 +1,4 @@
-import reduce, { SET_ARTICLES, articles, articleById }
+import reduce, { SET_ARTICLES, getArticles, getArticleById }
   from './articles'
 
 describe('(Articles)', () => {
@@ -21,13 +21,13 @@ describe('(Articles)', () => {
     describe('articles', () => {
       it('should get articles', () => {
         const state = { articles: [1, 2, 3, 4, 5] }
-        expect(articles(state)).toEqual([1, 2, 3, 4, 5])
+        expect(getArticles(state)).toEqual([1, 2, 3, 4, 5])
       })
 
       describe('articleById', () => {
         it('should get article by id', () => {
           const state = { articles: [{ id: 1 }, { id: 2 }, { id: 3 }] }
-          expect(articleById(state, 2)).toEqual({ id: 2 })
+          expect(getArticleById(state, 2)).toEqual({ id: 2 })
         })
       })
     })

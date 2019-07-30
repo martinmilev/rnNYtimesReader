@@ -35,13 +35,13 @@ describe('(ArticleRow) is rendering', () => {
       <ArticleRow
         item={{
           title: 'Most Viewed Article',
-          published_date: '21.21.2121'
+          published_date: '21.21.2121',
+          media: { thumbnail: { height: 10, width: 10, source: '' } }
         }}
         fetchArticles={() => {}}
       />
     )
     const text = getAllByType('Text')
     expect(text[0].props.children).toEqual('Most Viewed Article')
-    expect(text[1].props.children).toEqual('21.21.2121')
   })
 })

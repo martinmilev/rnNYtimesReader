@@ -9,8 +9,9 @@ describe('(Article) is rendering', () => {
         article={{
           title: 'Most Viewed Article',
           abstract: 'Some abstraction',
-          published_date: '21.21.2121',
-          byline: 'by John Doe'
+          publishedOn: '21.21.2121',
+          byline: 'by John Doe',
+          media: { image: { height: 10, width: 10, source: '' } }
         }}
       />
     )
