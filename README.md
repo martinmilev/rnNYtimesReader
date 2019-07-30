@@ -30,3 +30,5 @@ For ios
 ```sh
 TBD
 ```
+
+[MIT Licensed](https://github.com/martinmilev/rnNYtimesReader/blob/master/LICENSE)
