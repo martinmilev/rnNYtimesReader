@@ -5,9 +5,6 @@ import { Row, Typography, Image } from '../Layout'
 const Article = ({ article }) => (
   <ScrollView style={styles.container}>
     <Row style={styles.row}>
-      <Typography variant={'header'}>{article.title}</Typography>
-    </Row>
-    <Row style={styles.row}>
       <Typography align={'left'} variant={'caption'}>
         {article.byline}
       </Typography>

@@ -5,7 +5,7 @@ import { Row, Typography, Image } from '../Layout'
 import PropTypes from 'prop-types'
 
 const ArticleRow = ({ item }) => (
-  <Link to={`/article/${item.id}`}>
+  <Link to={{ pathname: `/article/${item.id}`, state: { title: item.title }}}>
     <Row style={styles.container}>
       <View style={styles.thumbnail}>
         <Image style={styles.thumbnail} image={item.media.thumbnail} />

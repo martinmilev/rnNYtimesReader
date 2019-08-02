@@ -13,6 +13,9 @@ const Header = ({ title, history }) => (
   </Row>
 )
 
-Header.propTypes = { title: PropTypes.string.isRequired }
+Header.propTypes = {
+  title: PropTypes.string.isRequired,
+  history: PropTypes.object.isRequired
+}
 
 export default Header

@@ -34,7 +34,7 @@ class BackButton extends Component {
 
     return (
       <TouchableOpacity
-        style={{ width: 80 }}
+        style={{ width: 40 }}
         onPress={this.handleBackPress}
         testID="button"
       >

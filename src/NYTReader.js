@@ -14,7 +14,7 @@ const routes = [
   },
   {
     path: '/article/:id',
-    header: props => <Header title={''} {...props} />,
+    header: props => <Header title={props.history.location.state.title} {...props} />,
     main: props => <Article {...props} />
   }
 ]

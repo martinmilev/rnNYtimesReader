@@ -16,9 +16,8 @@ describe('(Article) is rendering', () => {
       />
     )
     const text = getAllByType('Text')
-    expect(text[0].props.children).toEqual('Most Viewed Article')
-    expect(text[1].props.children).toEqual('by John Doe')
-    expect(text[2].props.children).toEqual('21.21.2121')
-    expect(text[3].props.children).toEqual('Some abstraction')
+    expect(text[0].props.children).toEqual('by John Doe')
+    expect(text[1].props.children).toEqual('21.21.2121')
+    expect(text[2].props.children).toEqual('Some abstraction')
   })
 })

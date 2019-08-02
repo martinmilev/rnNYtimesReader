@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
   },
   icon: {
     color,
-    fontSize: 22,
-    fontWeight: '600',
+    fontSize: 24,
+    fontWeight: '900',
     fontFamily: 'UbuntuCondensed-Regular'
   }
 })
