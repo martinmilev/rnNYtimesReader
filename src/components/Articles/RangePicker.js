@@ -26,7 +26,7 @@ const RangePicker = ({ selectedValue, onSelect }) => {
 }
 
 RangePicker.propTypes = {
-  selectedValue: PropTypes.string.isRequired,
+  selectedValue: PropTypes.number.isRequired,
   onSelect: PropTypes.func.isRequired
 }
 

@@ -4,12 +4,13 @@ import Articles from './Articles'
 import ArticleRow from './ArticleRow'
 
 describe('(Articles) is rendering', () => {
-  it('should render activity indicator when articles array is empty', () => {
+  it('should render activity indicator when is fetching', () => {
     const { getAllByType } = render(
       <Articles
       range={1}
       articles={[]}
       setRange={() => {}}
+      isFetching={true}
       />
     )
     const indicator = getAllByType('ActivityIndicator')
@@ -23,6 +24,7 @@ describe('(Articles) is rendering', () => {
         range={1}
         articles={[]}
         setRange={onEventMock}
+        isFetching={false}
       />
     )
     expect(onEventMock).toHaveBeenCalledWith(1)
@@ -33,6 +35,7 @@ describe('(ArticleRow) is rendering', () => {
   it('should render article', () => {
     const { getAllByType } = render(
       <ArticleRow
+        range={1}
         item={{
           title: 'Most Viewed Article',
           published_date: '21.21.2121',
