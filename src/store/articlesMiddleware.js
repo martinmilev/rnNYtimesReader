@@ -17,6 +17,7 @@ const articlesFetchFlow = ({ dispatch }) => next => action => {
         id: article.id,
         title: article.title,
         abstract: article.abstract,
+        url: article.url,
         byline: article.byline,
         publishedOn: article.published_date,
         media: processArticleMedia(article.media)

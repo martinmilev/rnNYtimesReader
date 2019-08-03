@@ -26,6 +26,12 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     fontFamily: 'UbuntuCondensed-Regular'
   },
+  link: {
+    color: '#273c75',
+    fontSize: 16,
+    fontWeight: '600',
+    fontFamily: 'UbuntuCondensed-Regular'
+  },
   icon: {
     color,
     fontSize: 24,

@@ -1,5 +1,5 @@
 import React from 'react'
-import { ScrollView, StyleSheet } from 'react-native'
+import { ScrollView, StyleSheet, TouchableOpacity, Linking } from 'react-native'
 import { Row, Typography, Image } from '../Layout'
 
 const Article = ({ article }) => (
@@ -17,6 +17,11 @@ const Article = ({ article }) => (
     </Row>
     <Row style={styles.row}>
       <Typography variant={'title'}>{article.abstract}</Typography>
+    </Row>
+    <Row style={styles.row}>
+      <TouchableOpacity onPress={() => Linking.openURL(article.url)}>
+        <Typography variant={'link'}>{'more...'}</Typography>
+      </TouchableOpacity>
     </Row>
   </ScrollView>
 )

@@ -11,6 +11,7 @@ describe('(Article) is rendering', () => {
           abstract: 'Some abstraction',
           publishedOn: '21.21.2121',
           byline: 'by John Doe',
+          link: '/test',
           media: { image: { height: 10, width: 10, source: '' } }
         }}
       />
@@ -19,5 +20,6 @@ describe('(Article) is rendering', () => {
     expect(text[0].props.children).toEqual('by John Doe')
     expect(text[1].props.children).toEqual('21.21.2121')
     expect(text[2].props.children).toEqual('Some abstraction')
+    expect(text[3].props.children).toEqual('more...')
   })
 })
