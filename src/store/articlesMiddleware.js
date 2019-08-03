@@ -26,7 +26,7 @@ const articlesFetchFlow = ({ dispatch }) => next => action => {
   }
 }
 
-const processArticleMedia = media => {
+export const processArticleMedia = media => {
   const extracted = { thumbnail: {}, image: {} }
   if (media.length > 0) {
     media.map(item => {

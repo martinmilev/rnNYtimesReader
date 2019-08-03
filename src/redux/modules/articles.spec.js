@@ -4,10 +4,8 @@ import reduce, {
   FETCH_ARTICLES,
   FETCH_ARTICLES_SUCCESS,
   FETCH_ARTICLES_FAIL,
-  getArticleById,
-  isFetching
-}
-  from './articles'
+  getArticleById
+} from './articles'
 
 describe('(Articles)', () => {
   describe('Reducer', () => {
