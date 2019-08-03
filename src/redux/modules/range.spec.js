@@ -10,9 +10,9 @@ describe('(Range)', () => {
     it('Range updated on SET_RANGE', () => {
       const state = reduce([], {
         type: SET_RANGE,
-        range: 3
+        range: '3'
       })
-      expect(state).toEqual(3)
+      expect(state).toEqual('3')
     })
   })
 })

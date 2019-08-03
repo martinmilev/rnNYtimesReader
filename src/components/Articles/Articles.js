@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect } from 'react'
-import { FlatList, ActivityIndicator } from 'react-native'
+import { FlatList } from 'react-native'
 import ArticleRow from './ArticleRow'
 import RangePicker from './RangePicker'
 
@@ -10,10 +10,6 @@ const Articles = ({ isFetching, articles, range, setRange }) => {
       setRange(range)
     }
   }, [])
-
-  if (isFetching) {
-    return <ActivityIndicator size="large" color="#1e272e" />
-  }
 
   return (
     <Fragment>

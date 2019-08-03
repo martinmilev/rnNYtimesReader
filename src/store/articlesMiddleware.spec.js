@@ -16,14 +16,14 @@ describe('Articles', () => {
     it('should fetch articles on range change', () => {
       const store = mockStore({})
       
-      store.dispatch(setRange(11))
+      store.dispatch(setRange('11'))
 
       const actions = store.getActions()
 
       expect(actions.length).toEqual(2)
       expect(actions[0]).toEqual({
         type: SET_RANGE,
-        range: 11
+        range: '11'
       })
       expect(actions[1]).toEqual({
         type: FETCH_ARTICLES,
