@@ -3,7 +3,7 @@
 > New York Times Most View Articles Reader.
 ## Example app written with React Native, Redux, Axios.
 
-![](https://raw.githubusercontent.com/martinmilev/rnNYtimesReader/master/assets/screenshots.png)
+![](https://raw.githubusercontent.com/martinmilev/rnNYtimesReader/master/public/screenshots.png)
 
 ### Dowlload APK
 - [Release 0.0.1](https://github.com/martinmilev/rnNYtimesReader/releases/tag/0.0.1)
