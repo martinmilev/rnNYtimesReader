@@ -3,7 +3,7 @@ import { ScrollView, StyleSheet } from 'react-native'
 import { Row, Typography, Image } from '../Layout'
 
 const Article = ({ article }) => (
-  <ScrollView style={styles.container}>
+  <ScrollView>
     <Row style={styles.row}>
       <Typography align={'left'} variant={'caption'}>
         {article.byline}
@@ -21,7 +21,7 @@ const Article = ({ article }) => (
   </ScrollView>
 )
 const styles = StyleSheet.create({
-  container: { padding: 5 },
+  image: { margin: 10, justifyContent: 'center' },
   row: { margin: 10 }
 })
 

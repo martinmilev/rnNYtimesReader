@@ -43,8 +43,8 @@ const processArticleMedia = media => {
             }
             case "mediumThreeByTwo440": {
               extracted.image = {
-                width: 330,   //temporary values
-                height: 330, //maximum size should be calculated
+                width: data.width,
+                height: data.height,
                 source: data.url,
               }
             }

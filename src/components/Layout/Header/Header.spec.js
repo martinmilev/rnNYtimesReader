@@ -4,7 +4,7 @@ import { Typography } from '../'
 import Header from './Header'
 
 describe('(Header) is rendering', () => {
-  it('should render article', () => {
+  it('should render header', () => {
     const { getByType } = render(
       <Header title={'Test Title'} history={{ location: { pathname: '/' }}} />
     )
